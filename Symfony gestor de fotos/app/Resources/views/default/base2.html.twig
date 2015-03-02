@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="Walter Muñoz">
+    <meta name="description" content="Desarrollo de Sistemas, sitios web, consultorias, Tecnologias, php, java, Silex, Symfony, bootstrap, ingenieria de software">
+    <title>Bardo - Desarrollo de sistemas</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ app.request.basepath }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ app.request.basepath }}/css/agency2.css" rel="stylesheet">
+    <link href="{{ asset('/css/agency2.css') }}" type="text/css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ app.request.basepath }}/css/scrolling-nav.css" rel="stylesheet">
+    <link href="{{ asset('/css/scrolling-nav.css') }}" type="text/css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ app.request.basepath }}/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Kaushan+Script" rel='stylesheet' type='text/css'>
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel='stylesheet' type='text/css'>
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet" type='text/css'>
+    <link href="{{ app.request.basepath }}http://fonts.googleapis.com/css?family=Akronim" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        body
+        {
+            background-repeat: no-repeat;
+            background-attachment: fixed
+        }
+    </style>
+</head>
+
+<!-- Header -->
+<header>
+    <div class="container">
+    </div>
+</header>
+
+<body id="page-top" class="index" background="{{ asset('images/.jpg') }}" >
+<div class="container">
+    <div align="center">
+        <img  align="center"  src="{{ app.request.basepath }}/images/Kat.jpg"   class="img-responsive" alt="">
+    </div>
+
+    <form class="form-horizontal" id="form1" name="form1" method="post" action="" >
+        <fieldset>
+            <!-- Form Name -->
+            <legend>Contacto</legend>
+            <!-- Fila 3-->
+            <div class="row">
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Calle</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="calle" name="calle" type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Numero</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="numero" name="numero"  type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Otros</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="otros" name="otros" type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 4-->
+            <div class="row">
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Comuna</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="comuna" name="comuna"  type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Email</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="email" name="email"  type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Fono</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="fono" size="3" name="fono"  type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="col-md-4">
+                    <label class="control-label" for="textinput">Movil</label>
+                    <div class="controls">
+                        <input  class="form-control" style="width:150px;" id="movil" size="3" name="movil" type="text" placeholder="" class="input-xlarge" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="singlebutton"></label>
+                <div class="controls">
+                    <button id="Enviar" name="Enviar" class="btn btn-primary">Finalizar</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+</div>
+</div>
+</div>
+</div><!-- /container -->
+
+
+
+<!-- /Header -->
+<div class="container">
+
+    {% block body %}{% endblock %}
+    <hr>
+</div> <!-- /container -->
+</body>
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy;Bardo</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="{{ app.request.basepath }}/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="{{ app.request.basepath }}/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- jQuery -->
+    <script src="{{ app.request.basepath }}/js/jquery.js"></script>
+    <script src="{{ app.request.basepath }}/js/jquery-1.11.0.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ app.request.basepath }}/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="{{ app.request.basepath }}/http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{{ app.request.basepath }}/js/classie.js"></script>
+    <script src="{{ app.request.basepath }}/js/cbpAnimatedHeader.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ app.request.basepath }}/js/agency.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{{ app.request.basepath }}/js/jquery.easing.min.js"></script>
+    <script src="{{ app.request.basepath }}/js/scrolling-nav.js"></script>
+
+
+</html>

@@ -1,0 +1,13 @@
+
+walteralumnos_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: walteralumnosBundle:Default:index }
+walteralumnos_alumnos:
+    path:     /alumnos
+    defaults: { _controller: walteralumnosBundle:Default:alumnos }
+walteralumnos_alumno:
+    path:     /alumno/{matricula}
+    defaults: { _controller: walteralumnosBundle:Default:alumno }
+walteralumnos_nuevo:
+    path:     /nuevo
+    defaults: { _controller: walteralumnosBundle:Default:nuevo }

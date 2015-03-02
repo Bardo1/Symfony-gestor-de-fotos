@@ -1,0 +1,58 @@
+{% extends "layout.twig" %}
+
+ {% block contentbarra %}
+
+
+ {% endblock %}
+
+
+{% block content %}
+    <br> </br>
+    <br> </br>
+{% if  app.session.get('user') is not null %}
+    {% if app.session.get('user').username=="admin" %}
+    <div class="container">
+        <br> </br>
+        <!--left-->
+        <div class="row">
+            <div class="col-xs-3 ">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <!-- Left -->
+                        <legend>Panel de Administrador</legend>
+                        <hr>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="nav-header"></li>
+                            <li class="active"><a href="" title="Bootstrap 3 ListGroup">Probando</a></li>
+
+                        </ul>
+                    </div><!-- /span-3 -->
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <form action="{{ path('walterprueba_create') }}" method="post" {{ form_enctype(form) }}>
+                                {{ form_widget(form) }}
+                                <p>
+                                    <button class="btn btn-primary" type="submit">Create</button>
+                                </p>
+                            </form>
+
+                        </div><!--/center-->
+                    </div>
+                </div>
+            </div>
+        </div><!-- /container -->
+    </div>
+    <!-- Main -->
+    <br> </br>
+    </div>
+
+{% endif %}
+{% endif %}
+
+{% endblock %}

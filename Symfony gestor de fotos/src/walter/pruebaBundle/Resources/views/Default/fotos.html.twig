@@ -1,0 +1,9 @@
+{% extends 'walterpruebaBundle::main.html.twig' %}
+
+{% block contenido %}
+    <h1>Listado de fotos</h1>
+    {% for fotos in fotos %}
+    <img src="{{ asset('/bundles/images/16.jpg') }}" />
+    <a href=""> <div>{{ fotos.id }}- {{ fotos.nombre }}</div></a>
+    {% endfor%}
+{% endblock %}

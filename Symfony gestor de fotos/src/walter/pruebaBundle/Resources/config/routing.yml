@@ -1,0 +1,45 @@
+walterprueba_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: walterpruebaBundle:Default:index }
+walterprueba_nuevo:
+    path:     /nuevo
+    defaults: { _controller: walterpruebaBundle:Default:nuevo }
+walterprueba_fotos:
+    path:     /fotos
+    defaults: { _controller: walterpruebaBundle:Default:fotos }
+walterprueba_fotosentradas:
+    path:     /fotosentradas
+    defaults: { _controller: walterpruebaBundle:Default:fotosentradas }
+walterprueba_alumno:
+    path:     /alumno/{matricula}
+    defaults: { _controller: walterpruebaBundle:Default:alumno }
+walterprueba_buscaentrada:
+    path:     /buscaentrada/{id}
+    defaults: { _controller: walterpruebaBundle:Default:buscaentrada }
+walterprueba_nuevo:
+    path:     /nuevo
+    defaults: { _controller: walterpruebaBundle:Default:nuevo }
+walterprueba_testadd:
+    path:     /test/add
+    defaults: { _controller: walterpruebaBundle:Default:add }
+walterprueba_testadd2:
+    path:     /test/add2
+    defaults: { _controller: walterpruebaBundle:Default:add2 }
+walterprueba_productosentradas:
+    path:     /productosentradas
+    defaults: { _controller: walterpruebaBundle:Default:productosentradas }
+walterprueba_upload:
+    pattern:  /upload
+    defaults: { _controller: walterpruebaBundle:Default:upload }
+walterprueba_new:
+    pattern:  /new
+    defaults: { _controller: walterpruebaBundle:Default:new }
+walterprueba_create:
+    pattern:  /create
+    defaults: { _controller: walterpruebaBundle:Default:create }
+walterprueba_show:
+    pattern:  /show/{id}
+    defaults: { _controller: walterpruebaBundle:Default:show }
+walterprueba_entradadesple:
+    pattern:  /entradadesple/{id}
+    defaults: { _controller: walterpruebaBundle:Default:entradadesple }

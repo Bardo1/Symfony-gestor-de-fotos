@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="Walter Muñoz">
+    <meta name="description" content="Desarrollo de Sistemas, sitios web, consultorias, Tecnologias, php, java, Silex, Symfony, bootstrap, ingenieria de software">
+    <title>Bardo - Desarrollo de sistemas</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ app.request.basepath }}/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ app.request.basepath }}/css/agency2.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="{{ app.request.basepath }}/css/scrolling-nav.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ app.request.basepath }}/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Kaushan+Script" rel='stylesheet' type='text/css'>
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel='stylesheet' type='text/css'>
+    <link href="{{ app.request.basepath }}/http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet" type='text/css'>
+    <link href="{{ app.request.basepath }}http://fonts.googleapis.com/css?family=Akronim" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+
+        body
+        {
+            background-repeat: no-repeat;
+            background-attachment: fixed
+        }
+    </style>
+</head>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Bardo</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="http://www.bardo1.com">Desarrollo de software</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="">Fotos</a>
+                </li>
+                <li>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+
+                            {% if app.session.get('user') is null %}
+                                <li class="dropdown" id="menuLogin">
+                                    <a class="glyphicon glyphicon-log-in"  class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin" > Login </a>
+                                    <div class="dropdown-menu" style="padding:17px;">
+                                        <form  id="form2" name="form2" action="{{ path('_welcome') }}" method="post">
+                                            <fieldset>
+                                                <input name="username" id="username" type="text" placeholder="Correo electronico">
+                                                <input name="password" id="password" type="password" placeholder="Password"><br>
+                                                <button   type="submit" name="login" id="login" value="login" class="btn btn-primary" class="glyphicon glyphicon-log-in" > Iniciar Sesion</button>
+                                                <a href="{{ path('_welcome') }}">Registrarse</a><br>
+                                                <a href="{{ path('_welcome') }}">Olvido Contraseña?</a><br>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </li>
+                            {% elseif  app.session.get('user').username=="admin" %}
+                                <li class="dropdown" id="menuLogin">
+
+                                    <a class="glyphicon glyphicon-user" class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin"> {{ app.session.get('user').username }}</a>
+                                    <div class="dropdown-menu" style="padding:17px;">
+                                        <form  id="form3" name="form3" action="{{ path('_welcome') }}" method="post">
+                                            <div>
+                                                <button type="submit" name="loginout"  id="loginout" value="entrada" class="btn btn-primary"  href="{{ path('_welcome') }}">Perfil de Administrador</button>
+                                            </div>
+                                        </form>
+                                        <br>
+                                        <form  id="form3" name="form3" action="{{ path('_welcome') }}" method="post">
+                                            <div>
+                                                <button type="submit" name="loginout" id="loginout" value="loginout" class="btn btn-danger">Cerrar sesion</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+
+                            {% else %}
+                                <li class="dropdown" id="menuLogin">
+                                    <a class="glyphicon glyphicon-user" class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin"> {{ app.session.get('user').username }}</a>
+                                    <div class="dropdown-menu" style="padding:17px;">
+
+                                        <form  id="form3" name="form3" action="{{ path('_welcome') }}" method="post">
+                                            <div>
+                                                <button type="submit" name="loginout" id="loginout" value="entrada" class="btn btn-primary">Perfil de usuario</button>
+                                            </div>
+                                        </form>
+                                        <br>
+                                        <form  id="form3" name="form3" action="{{ path('_welcome') }}" method="post">
+                                            <div>
+                                                <button type="submit" name="loginout" id="loginout" value="loginout" class="btn btn-danger">Cerrar sesion</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Header -->
+<header>
+    <div class="container">
+    </div>
+</header>
+
+
+
+<body id="page-top" class="index" background="{{ app.request.basepath }}/images/16.jpg" >
+<div class="container">
+
+    {% block body %}{% endblock %}
+
+    <hr>
+</div>
+</body>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy;Bardo</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/Bardo__"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/walter.r.zamorano"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="{{ app.request.basepath }}/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="{{ app.request.basepath }}/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- jQuery -->
+    <script src="{{ app.request.basepath }}/js/jquery.js"></script>
+    <script src="{{ app.request.basepath }}/js/jquery-1.11.0.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ app.request.basepath }}/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="{{ app.request.basepath }}/http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{{ app.request.basepath }}/js/classie.js"></script>
+    <script src="{{ app.request.basepath }}/js/cbpAnimatedHeader.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ app.request.basepath }}/js/agency.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{{ app.request.basepath }}/js/jquery.easing.min.js"></script>
+    <script src="{{ app.request.basepath }}/js/scrolling-nav.js"></script>
+
+
+</html>

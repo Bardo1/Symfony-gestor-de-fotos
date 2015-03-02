@@ -1,0 +1,20 @@
+{% extends 'walterpruebaBundle::main.html.twig' %}
+
+{% block contenido %}
+<!-- Main -->
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    {% for Productos in Productos %}
+    <div class="container">
+        <!-- Columns are always 50% wide, on mobile and desktop -->
+        <img src="{{ Productos.nombre }}" />
+        <td>{{ Productos.nombre }}</td>
+        <td>{{ Productos.precio }}</td>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+

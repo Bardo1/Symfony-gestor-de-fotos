@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+<h1>Agregar foto add1</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    {{ form_start(form) }}
+
+    <p>Nombre:{{ form_widget(form.nombre) }}</p>
+
+    <p>precio:{{ form_widget(form.precio) }}</p>
+
+    {{ form_end(form) }}
+
+{% endblock %}

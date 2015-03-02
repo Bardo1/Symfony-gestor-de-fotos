@@ -1,0 +1,13 @@
+{% extends 'walteralumnosBundle::main.html.twig' %}
+
+
+
+{% block contenido %}
+<h1>Listado de alumnos</h1>
+{% for alumno in alumnos %}
+    <img src="{{ asset('/bundles/images/16.jpg') }}" />
+   <a href="{{ url('walteralumnos_alumno',{'matricula':alumno.id}) }}"> <div>{{ alumno.id }}- {{ alumno.nombre }}</div></a>
+
+{% endfor%}
+
+{% endblock %}

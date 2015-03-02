@@ -1,0 +1,129 @@
+{% extends 'walteralumnosBundle::main.html.twig' %}
+
+{% block contenido %}
+    <br> </br>
+    <br> </br>
+    <br> </br>
+{% if  app.session.get('user') is not null %}
+    {% if app.session.get('user').username=="admin" %}
+
+    <div class="container">
+        <!--left-->
+        <div class="row">
+            <div class="col-xs-3 ">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <!-- Left -->
+                        <legend>Panel de Administrador</legend>
+                        <hr>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="nav-header"></li>
+                            <li><a href="{{ app.url_generator.generate('ingresarofertalaboral') }}" title="Bootstrap 3 ListGroup">Ingresar oferta laboral</a></li>
+                            <li><a href="{{ app.url_generator.generate('modificarofertalaboral') }}" title="Bootstrap 3 ListGroup">Modificar oferta laboral</a></li>
+                            <li><a href="{{ app.url_generator.generate('eliminarofertalaboral') }}" title="Bootstrap 3 ListGroup">Eliminar oferta laboral</a></li>
+                            <li><a href="{{ app.url_generator.generate('verusuarios') }}" title="Bootstrap 3 ListGroup">Ver usuarios</a></li>
+                            <li><a href="{{ app.url_generator.generate('eliminarusuarios') }}" title="Bootstrap 3 ListGroup">Eliminar usuarios</a></li>
+                            <li><a href="{{ app.url_generator.generate('verpostulacionoferta') }}" title="Bootstrap 3 Icons">Ver Postulaciones a Oferta</a></li>
+                            <li class="active"><a href="{{ app.url_generator.generate('enviarmensaje') }}" title="Bootstrap 3 Icons">Enviar aviso</a></li>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {% if resultado is  defined %}
+                                {% if resultado== true %}
+
+                                    <div class="alert alert-success alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert"
+                                                aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <strong>Exito!</strong>  El mensaje ha sido enviado!
+                                    </div>
+
+                                {% endif %}
+                                {% if resultado==false %}
+
+                                    <div class="alert alert-danger alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert"
+                                                aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <strong>Error !</strong>  El mensaje no ha sido enviado!
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+
+
+
+                            <form action="" method="post" {{ form_enctype(form) }}>
+                                <fieldset>
+                                    <input   type="hidden" id="id" name="id"  value="{{ app.session.get('id').id }}" size=70   placeholder="" class="input-xlarge" required>
+                                    <legend>File Upload</legend>
+                                    {{ form_widget(form) }}
+
+                                <button id="Enviar" name="Enviar" class="btn btn-primary" >Registrarse</button>
+                                <input type="submit"  name="Upload File" />
+
+
+                                    <legend>Subir entrada</legend>
+                                    <div class="control-group">
+                                    <label class="control-label" for="textarea">Fecha</label>
+                                        <div class="controls">
+                                    <input type="date" name="fecha" id="fecha">
+                                    </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="textinput">Titulo</label>
+                                        <div class="controls">
+                                            <input id="titulo" name="titulo"  type="text" placeholder="" class="input-xlarge" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Textarea -->
+                                    <div class="control-group">
+                                        <label class="control-label" for="textarea">Descripcion</label>
+                                        <div class="controls">
+                                            <textarea  style="width: 700px; height: 102px;" id="descripcion" name="descripcion"  value="{% if descripcion is defined %}{{ descripcion }}{% endif %}"></textarea>
+                                            <br> </br>
+
+                                            <a href="#" class="btn btn-primary"
+                                               data-toggle="modal"
+                                               data-target="#basicModal">Enviar Aviso</a>
+                                            <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <b><h>Confirmar envio</h></b>
+                                                         <h4 class="modal-title" id="myModalLabel"></h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <button type="submit" name="Enviar" id="Enviar"value="Enviar" class="btn btn-primary">Aceptar</button>
+
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true" >Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                </form>
+
+
+                        </div><!--/center-->
+                    </div>
+                </div>
+            </div>
+        </div><!-- /container -->
+    </div>
+    <br> </br>
+    <br> </br>
+    </div>
+    {% endif %}
+{% endif %}
+{% endblock %}
